@@ -1,50 +1,35 @@
 <template>
-	<view id="subcategory">
-		<view class="sub_center" v-for="(bookcity,bookcity_index) in category" :key="bookcity_index">
-			{{bookcity.name}}
-			<view class="category">
-				<navigator class="sub_nav" :data-name="bookcity.type" v-for="(item,index) in list[bookcity.type]" :key="index">{{item.major}}</navigator>
-			</view>
-		</view>
-	</view>
+	<list :category="category" :main_url="main_url"></list>
 </template>
 
 <script>
+	import list from '../../components/list/list.vue'
 	export default {
+		components: {
+			list
+		},
 		data() {
 			return {
 				category: [{
 						name: "男生标签",
-						type:'male'
+						type: 'male'
 					},
 					{
 						name: "女生标签",
-						type:'female'
+						type: 'female'
 					},
 					{
 						name: "图书标签",
-						type:'picture'
+						type: 'picture'
 					},
 					{
 						name: "出版标签",
-						type:'press'
+						type: 'press'
 					}
 				],
-				list: ""
+				main_url:'/api/cats/lv2'
 			}
 		},
-		methods: {
-			async getinfo() {
-				var url = '/api/cats/lv2'
-				const data = await this.$uniRequest({
-					url
-				})
-				this.list = data.data;
-			}
-		},
-		created() {
-			this.getinfo()
-		}
 	}
 </script>
 
@@ -59,7 +44,7 @@
 		text-align: center;
 		padding-top: 40rpx;
 	}
-	
+
 	/* 标签 */
 	.category {
 		display: flex;
@@ -68,6 +53,7 @@
 		margin-right: 20rpx;
 		font-size: 32rpx;
 	}
+
 	/* 链接 */
 	.sub_nav {
 		width: 20%;

@@ -4,7 +4,7 @@
 		<swiper class="swiper">
 			<swiper-item>
 				<view class="swiper-item">
-					<bookcity></bookcity>
+					<ranking></ranking>
 				</view>
 			</swiper-item>
 			<swiper-item>
@@ -19,7 +19,7 @@
 			</swiper-item>
 			<swiper-item>
 				<view class="swiper-item">
-					<subcategory></subcategory>
+					<ranking></ranking>
 				</view>
 			</swiper-item>
 		</swiper>
@@ -29,10 +29,12 @@
 <script>
 	import bookcity from '../bookCity/bookCity.vue'
 	import subcategory from '../subCategory/subCategory.vue'
+	import ranking from '../Ranking/Ranking.vue'
 	export default {
 		components: {
 			bookcity,
-			subcategory
+			subcategory,
+			ranking
 		},
 		data() {
 			return {
@@ -59,8 +61,11 @@
 <style scoped>
 	.swiper {
 		width: 100%;
-		height: 100vh;
+		height: 100vh !important;
 	}
 
-
+	.content {
+		width: 100%;
+		height: 100vh;
+	}
 </style>
