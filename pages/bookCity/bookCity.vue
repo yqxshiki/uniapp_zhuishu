@@ -10,8 +10,8 @@
 						</view>
 						<view class="right">
 							<view class="title"> {{item.name}}</view>
-							<view>总数:{{item.bookCount}}</view>
-							<view>月增:{{item.monthlyCount}}</view>
+							<view>{{item.bookCount}}本</view>
+							<!-- <view>月增:{{item.monthlyCount}}</view> -->
 						</view>
 					</navigator>
 				</view>
@@ -134,6 +134,7 @@
 	.title {
 		font-size: 16px;
 		color: orange;
+		margin: 10rpx;
 	}
 
 	.nav {

@@ -7,16 +7,16 @@ const $uniRequest = (data) => {
 			mask: true
 		})
 		uni.request({
-			url:  data.url,
+			url: data.url,
 			method: data.method || 'GET',
 			data: data.data || '{}',
 			success: (res) => {
-				// if (res.data.status !== 0) {
-				// 	return uni.showToast({
-				// 		title: "请求接口失败!",
-				// 		icon: 'none'
-				// 	})
-				// }
+				if (res.statusCode !== 200) {
+					return uni.showToast({
+						title: "请求接口失败!",
+						icon: 'none'
+					})
+				}
 				resolve(res)
 			},
 			fail: (err) => {

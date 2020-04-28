@@ -3,11 +3,25 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				// "navigationBarTitleText": "uni-app"
+				"app-plus": {
+					"titleNView": false
+				}
 			}
 		},
 		{
 			"path": "pages/subCategory/subCategory",
+			"style": {}
+		},
+		{
+			"path": "pages/book/book",
+
+			"style": {}
+		},
+		{
+			"path": "pages/bookDetail/bookDetail",
+			"style": {}
+		}, {
+			"path": "pages/reading/reading",
 			"style": {}
 		}
 	],

@@ -4,17 +4,17 @@
 		<swiper class="swiper">
 			<swiper-item>
 				<view class="swiper-item">
-					<ranking></ranking>
-				</view>
-			</swiper-item>
-			<swiper-item>
-				<view class="swiper-item">
 					<subcategory></subcategory>
 				</view>
 			</swiper-item>
 			<swiper-item>
 				<view class="swiper-item">
 					<bookcity></bookcity>
+				</view>
+			</swiper-item>
+			<swiper-item>
+				<view class="swiper-item">
+					<subcategory></subcategory>
 				</view>
 			</swiper-item>
 			<swiper-item>

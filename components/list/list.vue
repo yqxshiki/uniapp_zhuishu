@@ -1,17 +1,17 @@
 <template>
 	<view id="subcategory">
 		<view :class="isrankgin==false?'sub_center':'ranking-container'" v-for="(bookcity,bookcity_index) in category" :key="bookcity_index">
-			<view :class="isrankgin==false?'':'ranking-name'">
+			<view  :class="isrankgin==false?'orange':'ranking-name'">
 				{{bookcity.name}}
 			</view>
 			<view class="category">
 
-				<navigator :class="isrankgin==false?'sub_nav':'ranking_nav'" :data-name="bookcity.type" v-for="(item,index) in list[bookcity.type]"
-				 :key="index">
-					<view v-if="isrankgin">
+				<navigator :url="'../../pages/book/book?major='+item.major" :class="isrankgin==false?'sub_nav':'ranking_nav'"
+				 :data-name="bookcity.type" v-for="(item,index) in list[bookcity.type]" :key="index">
+					<!-- <view v-if="isrankgin">
 						<image class="ranking-img" :src="'http://statics.zhuishushenqi.com/'+item.cover" mode=""></image>
-					</view>
-					<view class="ranking-shortTitle">
+					</view> -->
+					<view :class="isrankgin==false?'':'ranking-shortTitle'">
 						{{iscategory==false?item.major:item.shortTitle}}
 					</view>
 				</navigator>
@@ -54,7 +54,6 @@
 					url
 				})
 				this.list = data.data;
-				console.log(this.list)
 			}
 		},
 		created() {
@@ -67,6 +66,10 @@
 	#subcategory {
 		width: 100%;
 		background: rgba(222, 222, 222, .74);
+	}
+
+	.orange {
+		color: red;
 	}
 
 	.sub_center {
@@ -98,8 +101,9 @@
 		height: 120rpx;
 		vertical-align: middle;
 	}
-	.ranking-shortTitle{
-		margin-left: 40rpx;
+
+	.ranking-shortTitle {
+		/* margin-left: 40rpx; */
 		font-size: 32rpx;
 		color: orange;
 	}
