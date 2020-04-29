@@ -60,7 +60,6 @@
 					}, 1500)
 				}
 				this.list = this.list.concat(data.data.books)
-				console.log(this.list)
 			}
 		},
 		mounted() {

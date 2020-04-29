@@ -4,14 +4,15 @@
 		<swiper class="swiper" @change="index_change" :current="current">
 			<swiper-item v-for="(book,book_index) in 4" :key="book_index">
 				<view class="top" v-for="(item,index) in list" :key="index">
-					<navigator url="../../App" class="nav">
+					<navigator :url="'../book/book?major='+item.name" class="nav">
 						<view class="left">
-							<image class="view-img" :src="'http://statics.zhuishushenqi.com'+item.bookCover[0]"></image>
+							<image class="view-img img1" :src="'http://statics.zhuishushenqi.com'+item.bookCover[0]"></image>
+							<image class="view-img img2" :src="'http://statics.zhuishushenqi.com'+item.bookCover[1]"></image>
+							<image class="view-img img3" :src="'http://statics.zhuishushenqi.com'+item.bookCover[2]"></image>
 						</view>
 						<view class="right">
 							<view class="title"> {{item.name}}</view>
-							<view>{{item.bookCount}}本</view>
-							<!-- <view>月增:{{item.monthlyCount}}</view> -->
+							<view> {{item.bookCount}}本</view>
 						</view>
 					</navigator>
 				</view>
@@ -113,12 +114,31 @@
 	/* 图片 */
 	.left {
 		width: 30%;
+		position: relative;
 	}
 
 	.view-img {
-		width: 240rpx;
-		height: 160rpx;
+		width: 140rpx;
+		height: 200rpx;
 		margin: 40rpx;
+		position: absolute;
+	}
+
+	.img1 {
+		z-index: 999;
+	}
+
+	.img2 {
+		left: 30%;
+		top: 10%;
+		height: 176rpx;
+		z-index: 888;
+	}
+
+	.img3 {
+		left: 50%;
+		top: 20%;
+		height: 152rpx;
 	}
 
 	/* 分类 */

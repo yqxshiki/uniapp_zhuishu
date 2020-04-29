@@ -1,7 +1,7 @@
 <template>
 	<view id="subcategory">
 		<view :class="isrankgin==false?'sub_center':'ranking-container'" v-for="(bookcity,bookcity_index) in category" :key="bookcity_index">
-			<view  :class="isrankgin==false?'orange':'ranking-name'">
+			<view :class="isrankgin==false?'orange':'ranking-name'">
 				{{bookcity.name}}
 			</view>
 			<view class="category">
@@ -12,7 +12,15 @@
 						<image class="ranking-img" :src="'http://statics.zhuishushenqi.com/'+item.cover" mode=""></image>
 					</view> -->
 					<view :class="isrankgin==false?'':'ranking-shortTitle'">
-						{{iscategory==false?item.major:item.shortTitle}}
+						<view> {{iscategory==false?item.major:item.shortTitle}}
+						</view>
+						<!-- <view v-if="item.mins.length!==0" :class="isrankgin==false?'mins':'ranking_nav'">
+							<view v-for="(mins,mins_index) in item.mins">
+								<view>
+									{{mins}}
+								</view>
+							</view>
+						</view> -->
 					</view>
 				</navigator>
 			</view>
@@ -54,6 +62,7 @@
 					url
 				})
 				this.list = data.data;
+				console.log(this.list)
 			}
 		},
 		created() {
@@ -62,7 +71,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	#subcategory {
 		width: 100%;
 		background: rgba(222, 222, 222, .74);
@@ -119,10 +128,20 @@
 
 	/* 链接 */
 	.sub_nav {
-		width: 20%;
 		text-align: center;
-		background: #fff;
-		margin: 10rpx;
 		padding: 6rpx;
+		margin: 20rpx;
+		background: #fff;
 	}
+
+	/* .mins {
+		margin-top: 10rpx;
+	}
+
+	.mins view {
+		background: #fff;
+		margin: 6rpx;
+		padding: 6rpx;
+
+	} */
 </style>

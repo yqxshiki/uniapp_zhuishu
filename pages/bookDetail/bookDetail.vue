@@ -78,7 +78,6 @@
 					url
 				})
 				this.list = book.data
-				console.log(book.data)
 			}
 		},
 		created() {
